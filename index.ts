@@ -5,6 +5,7 @@ import {
   Client,
   Events,
   GatewayIntentBits,
+  GuildMemberRoleManager,
   Routes,
 } from "discord.js";
 
@@ -164,8 +165,8 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isCommand()) return;
   if (!interaction.guildId) return;
   if (!interaction.member) return;
-  const roles = (interaction.member.roles || []) as string[];
-  const hasRole = roles.includes(config.role!);
+  const roles = interaction.member.roles as GuildMemberRoleManager;
+  const hasRole = roles.cache.has(config.role!);
   if (!hasRole) {
     await interaction.reply("You do not have permission to use this command");
     return;
