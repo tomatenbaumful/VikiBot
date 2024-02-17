@@ -162,7 +162,7 @@ client.once(Events.ClientReady, (readyClient) => {
     client.user?.setActivity(`${pageList.length} Shows`, {
       type: ActivityType.Watching,
     });
-  });
+  }, config.interval);
 
   startAllJobs();
 });
