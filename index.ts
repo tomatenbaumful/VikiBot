@@ -106,7 +106,7 @@ async function checkPage(page: { id: string; title: string }) {
       subber.id,
     ]);
   }
-  let message = `@<&${config.role}> `;
+  let message = `<@&${config.role}> `;
   // let message = "";
   message += `New contributors for ${page.title}:\n`;
   message += `https://www.viki.com/${page.id}\n`;
