@@ -109,7 +109,7 @@ async function checkPage(page: { id: string; title: string }) {
   let message = `<@&${config.role}> `;
   // let message = "";
   message += `New contributors for ${page.title}:\n`;
-  message += `https://www.viki.com/${page.id}\n`;
+  message += `https://www.viki.com/tv/${page.id}\n`;
   if (newManagers.length > 0) {
     message += `Managers: ${newManagers
       .map((manager) => manager.username)
